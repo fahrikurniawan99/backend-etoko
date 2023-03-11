@@ -9,6 +9,10 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", async (req, res, next) => {
+  res.status(200).json({ message: "hello world" });
+});
+
 app.get("/province", async (req, res, next) => {
   try {
     const response = await axios.get(
